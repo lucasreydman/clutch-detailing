@@ -62,17 +62,22 @@ export function Nav() {
             ))}
           </nav>
 
+          {/* Desktop: book button */}
           <div className="hidden md:block">
             <BookNowButton size="sm" />
           </div>
 
-          <button
-            onClick={() => setOpen(true)}
-            aria-label="Open menu"
-            className="md:hidden w-10 h-10 grid place-items-center rounded-full hover:bg-forest/5 transition"
-          >
-            <span className="block w-5 h-px bg-forest relative before:absolute before:content-[''] before:left-0 before:right-0 before:-top-1.5 before:h-px before:bg-forest after:absolute after:content-[''] after:left-0 after:right-0 after:top-1.5 after:h-px after:bg-forest" />
-          </button>
+          {/* Mobile: book button + hamburger */}
+          <div className="md:hidden flex items-center gap-2">
+            <BookNowButton size="sm" label="Book" />
+            <button
+              onClick={() => setOpen(true)}
+              aria-label="Open menu"
+              className="w-10 h-10 grid place-items-center rounded-full hover:bg-forest/5 transition"
+            >
+              <span className="block w-5 h-px bg-forest relative before:absolute before:content-[''] before:left-0 before:right-0 before:-top-1.5 before:h-px before:bg-forest after:absolute after:content-[''] after:left-0 after:right-0 after:top-1.5 after:h-px after:bg-forest" />
+            </button>
+          </div>
         </div>
       </motion.header>
 

@@ -164,40 +164,38 @@
   }
 }
 
-/* ---------- CALENDLY EMBED OVERRIDES ---------- */
+/* ---------- CALENDLY EMBED OVERRIDES ----------
+ * react-calendly v4 renders into react-modal with this structure:
+ *   .calendly-overlay (react-modal overlay - covers viewport, fixed)
+ *     .calendly-popup-content (react-modal content - inline styles set
+ *        position:absolute, top:5%, left:5%, right:5%, bottom:5%)
+ *       .calendly-popup (plain wrapper)
+ *         iframe (width="100%", height="100%" attrs)
+ *       button.calendly-popup-close
+ *
+ * The bug: we need to override the inline `top/left/right/bottom: 5%`
+ * on .calendly-popup-content (NOT .calendly-popup which is unstyled)
+ * and let flex-centering on the overlay do the actual work.
+ */
 
-/* Inline embed — fill its container, fixed height */
-.calendly-inline-widget {
-  min-width: 320px !important;
-  width: 100% !important;
-  height: 760px !important;
-  background: transparent !important;
-}
-@media (max-width: 768px) {
-  .calendly-inline-widget { height: 1100px !important; }
-}
-
-/* Popup modal — react-calendly sets inline `position: absolute; top:5%;
-   left:5%; right:5%; bottom:5%` on .calendly-popup, which prevents centering.
-   Override with !important and explicit `auto` to null the inset declarations. */
+/* Overlay — flex-center the modal */
 .calendly-overlay {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 9999 !important;
-  background: rgba(20, 32, 26, 0.7) !important;
+  background-color: rgba(20, 32, 26, 0.7) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   padding: 24px !important;
 }
 
-.calendly-overlay .calendly-popup {
+/* The modal box itself — null react-calendly's inline positioning */
+.calendly-popup-content {
   position: relative !important;
   top: auto !important;
   left: auto !important;
   right: auto !important;
   bottom: auto !important;
   inset: auto !important;
+  margin: 0 !important;
   width: min(1100px, calc(100vw - 48px)) !important;
   height: min(880px, calc(100vh - 48px)) !important;
   max-width: 1100px !important;
@@ -205,32 +203,53 @@
   background: var(--color-bone) !important;
   border-radius: 16px !important;
   overflow: hidden !important;
+  border: 0 !important;
+  padding: 0 !important;
   box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5) !important;
 }
 
-.calendly-overlay .calendly-popup-content {
-  position: relative !important;
+/* The popup wrapper — fill the modal */
+.calendly-popup-content .calendly-popup {
   width: 100% !important;
   height: 100% !important;
+  position: relative !important;
+  background: var(--color-bone) !important;
 }
 
-.calendly-overlay .calendly-popup-content iframe,
-.calendly-overlay .calendly-popup iframe {
+/* The iframe — fill the popup wrapper */
+.calendly-popup-content iframe,
+.calendly-popup-content .calendly-popup iframe {
   width: 100% !important;
   height: 100% !important;
+  min-height: 100% !important;
   border: 0 !important;
   display: block !important;
 }
 
-/* Close button — Calendly puts this as a sibling of .calendly-popup inside
-   the overlay. Keep it in the screen's top-right but bone-tinted to match. */
-.calendly-overlay .calendly-popup-close {
+/* Close button — keep top-right of the modal */
+.calendly-popup-close {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
   z-index: 10 !important;
 }
 
+/* Inline embed — fixed height container on the /book page */
+.calendly-inline-widget {
+  min-width: 320px !important;
+  width: 100% !important;
+  height: 760px !important;
+  background: transparent !important;
+  position: relative !important;
+}
+@media (max-width: 768px) {
+  .calendly-inline-widget { height: 1100px !important; }
+}
+
+/* Mobile — full-screen modal */
 @media (max-width: 640px) {
   .calendly-overlay { padding: 0 !important; }
-  .calendly-overlay .calendly-popup {
+  .calendly-popup-content {
     width: 100vw !important;
     height: 100vh !important;
     max-width: 100vw !important;
