@@ -14,11 +14,11 @@ export function Testimonials() {
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <div className="flex items-baseline gap-6 mb-16">
-            <span className="label-eyebrow">Said about us</span>
+            <span className="label-eyebrow">Reviews</span>
             <span className="block flex-1 h-px bg-forest/15" />
           </div>
           <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[18ch] mb-16">
-            The reviews <span className="italic-display text-moss">do the talking.</span>
+            What our <span className="italic-display text-moss">clients say.</span>
           </h2>
         </Reveal>
 

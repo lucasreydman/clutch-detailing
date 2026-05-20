@@ -47,18 +47,19 @@ export function Hero() {
           className="flex items-center gap-3 mb-8"
         >
           <span className="block w-8 h-px bg-forest/40" />
-          <span className="label-eyebrow">Mobile detailing · Toronto · Est. 2024</span>
+          <span className="label-eyebrow">Mobile detailing in Toronto</span>
         </motion.div>
 
         {/* Headline */}
         <h1 className="display-xl text-[clamp(2.75rem,8.5vw,7.5rem)] max-w-[16ch] text-forest">
-          <Word delay={0.25}>Showroom</Word>{" "}
-          <Word delay={0.32}>clean.</Word>
+          <Word delay={0.25}>Mobile</Word>{" "}
+          <Word delay={0.32}>car</Word>{" "}
+          <Word delay={0.39}>detailing,</Word>
           <br />
           <span className="text-moss">
-            <Word delay={0.42} italic>Without</Word>{" "}
-            <Word delay={0.5} italic>the water</Word>{" "}
-            <Word delay={0.58} italic>bill.</Word>
+            <Word delay={0.5} italic>done</Word>{" "}
+            <Word delay={0.57} italic>at your</Word>{" "}
+            <Word delay={0.64} italic>home.</Word>
           </span>
         </h1>
 
@@ -69,7 +70,7 @@ export function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.75 }}
           className="mt-8 max-w-xl text-lg md:text-xl text-forest/75 leading-relaxed"
         >
-          Premium mobile car detailing — done in your driveway, with a fraction of the water of a traditional wash. Exclusively serving Lawrence Park, Hoggs Hollow, and surrounding neighbourhoods.
+          Professional results with biodegradable products and a fraction of the water of a traditional wash. Exclusively serving Lawrence Park, Hoggs Hollow, and surrounding neighbourhoods.
         </motion.p>
 
         {/* CTAs */}
@@ -97,7 +98,7 @@ export function Hero() {
         >
           <Stars />
           <p className="text-sm text-forest/70 max-w-md">
-            Loved by Toronto's north-end drivers — Porsches, family SUVs, weekend cruisers alike.
+            Trusted by clients across north Toronto since 2024.
           </p>
         </motion.div>
 

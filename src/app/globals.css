@@ -165,39 +165,47 @@
 }
 
 /* ---------- CALENDLY EMBED OVERRIDES ---------- */
+
+/* Inline embed — fill its container, fixed height */
 .calendly-inline-widget {
-  min-width: 320px;
-  height: 720px;
+  min-width: 320px !important;
+  width: 100% !important;
+  height: 760px !important;
   background: transparent !important;
 }
-
 @media (max-width: 768px) {
-  .calendly-inline-widget { height: 1080px; }
+  .calendly-inline-widget { height: 1100px !important; }
 }
 
-/* Popup modal — react-calendly defaults size the popup tiny; force it
-   to a proper modal that fills most of the viewport. */
+/* Popup modal — react-calendly sets inline `position: absolute; top:5%;
+   left:5%; right:5%; bottom:5%` on .calendly-popup, which prevents centering.
+   Override with !important and explicit `auto` to null the inset declarations. */
 .calendly-overlay {
   position: fixed !important;
   inset: 0 !important;
   z-index: 9999 !important;
-  background: rgba(20, 32, 26, 0.6) !important;
+  background: rgba(20, 32, 26, 0.7) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 2vh 2vw !important;
+  padding: 24px !important;
 }
 
 .calendly-overlay .calendly-popup {
   position: relative !important;
-  width: min(96vw, 1100px) !important;
-  height: min(94vh, 880px) !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  inset: auto !important;
+  width: min(1100px, calc(100vw - 48px)) !important;
+  height: min(880px, calc(100vh - 48px)) !important;
   max-width: 1100px !important;
   max-height: 880px !important;
-  border-radius: 18px !important;
-  overflow: hidden !important;
   background: var(--color-bone) !important;
-  box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.5) !important;
 }
 
 .calendly-overlay .calendly-popup-content {
@@ -214,40 +222,13 @@
   display: block !important;
 }
 
-.calendly-overlay .calendly-popup-close,
-.calendly-popup-close {
-  position: absolute !important;
-  top: 14px !important;
-  right: 14px !important;
-  width: 36px !important;
-  height: 36px !important;
-  background: var(--color-bone) !important;
-  background-image: none !important;
-  border-radius: 999px !important;
+/* Close button — Calendly puts this as a sibling of .calendly-popup inside
+   the overlay. Keep it in the screen's top-right but bone-tinted to match. */
+.calendly-overlay .calendly-popup-close {
   z-index: 10 !important;
-  box-shadow: 0 2px 8px rgba(20, 32, 26, 0.15) !important;
-  cursor: pointer !important;
-}
-.calendly-overlay .calendly-popup-close::before,
-.calendly-overlay .calendly-popup-close::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 1.5px;
-  background: var(--color-forest);
-  transform-origin: center;
-}
-.calendly-overlay .calendly-popup-close::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-.calendly-overlay .calendly-popup-close::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-/* Tighter sizing on small screens */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .calendly-overlay { padding: 0 !important; }
   .calendly-overlay .calendly-popup {
     width: 100vw !important;

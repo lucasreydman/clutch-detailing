@@ -5,18 +5,18 @@ import { Reveal } from "./Reveal";
 const steps = [
   {
     n: "01",
-    title: "Book your slot",
-    body: "Pick a time directly on our live calendar. No phone tag, no deposit.",
+    title: "Book online",
+    body: "Pick a time on the calendar. Real-time availability, no deposit required.",
   },
   {
     n: "02",
-    title: "We arrive",
-    body: "Two detailers, all our own gear and biodegradable products. You don't lift a finger.",
+    title: "We come to you",
+    body: "Two detailers, our own gear, our own biodegradable products. Just park the car somewhere accessible.",
   },
   {
     n: "03",
-    title: "Inspect together",
-    body: "When we're done we walk the car with you. If something's not right we fix it on the spot.",
+    title: "Walk-through together",
+    body: "When the work is done we walk the car with you. If anything needs another pass we take care of it before we leave.",
   },
 ];
 
@@ -27,8 +27,8 @@ export function Process() {
         <Reveal>
           <p className="label-eyebrow mb-4">How it works</p>
           <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[14ch] mb-20">
-            Three steps.<br />
-            <span className="italic-display text-moss">Zero fuss.</span>
+            Book online.<br />
+            <span className="italic-display text-moss">We come to you.</span>
           </h2>
         </Reveal>
 

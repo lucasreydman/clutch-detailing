@@ -100,7 +100,7 @@ export function PricingTable() {
             <div className="relative">
               <p className="label-eyebrow text-bone/60 mb-4">No deposit · No surprise fees</p>
               <h3 className="display-xl text-4xl md:text-5xl text-bone max-w-[18ch] mb-8">
-                Pick a slot. We'll handle the rest.
+                Book your detail online.
               </h3>
               <BookNowButton
                 size="lg"

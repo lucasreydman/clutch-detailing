@@ -19,7 +19,7 @@ export const services: ServiceTier[] = [
     priceSuv: 45,
     duration: "~45 min",
     summary:
-      "Snow foam, double-bucket technique, and a flawless contact dry. The everyday refresh.",
+      "pH-neutral snow foam pre-wash, two-bucket contact wash, microfibre dry, and door jambs wiped.",
     includes: [
       "pH-neutral snow foam pre-wash",
       "Two-bucket contact wash with grit guards",
@@ -34,7 +34,7 @@ export const services: ServiceTier[] = [
     priceCar: 15,
     duration: "~20 min",
     summary:
-      "Brake-dust dissolved off the barrels and a Chemical Guys dressing for a satin sheen.",
+      "Brake dust removed from the barrels, with a Chemical Guys dressing on the tires.",
     includes: [
       "Acid-free wheel cleaner",
       "Barrel and face agitation",
@@ -49,7 +49,7 @@ export const services: ServiceTier[] = [
     priceSuv: 155,
     duration: "~1.5–2 hr",
     summary:
-      "Full vacuum, vent detail, trim cleaning, and streak-free glass — top to bottom.",
+      "Full vacuum, vents and console detailed, trim cleaned, streak-free interior glass.",
     includes: [
       "Vacuum carpets, seats, trunk",
       "Air vent + console detailing",
@@ -65,7 +65,7 @@ export const services: ServiceTier[] = [
     priceSuv: 185,
     duration: "~2.5–3 hr",
     summary:
-      "Everything in Standard, plus floor-mat shampoo, leather treatment, and pet hair removal.",
+      "Everything in Standard, plus floor-mat shampoo, leather conditioning, and pet hair removal.",
     includes: [
       "Everything in Standard",
       "Floor mat shampoo + extraction",
@@ -82,7 +82,7 @@ export const services: ServiceTier[] = [
     priceSuv: 200,
     duration: "~2.5 hr",
     summary:
-      "Standard interior + a Standard wash + the Wheel & Tire Package. Inside, outside, done.",
+      "Standard wash, Standard interior detail, and the Wheel & Tire Package combined.",
     includes: [
       "Standard wash",
       "Standard interior detail",
@@ -97,7 +97,7 @@ export const services: ServiceTier[] = [
     priceSuv: 225,
     duration: "~3 hr",
     summary:
-      "The whole catalogue in one visit. Plus+ interior, wash, wheels, tires.",
+      "Plus+ interior detail, Standard wash, and the Wheel & Tire Package combined.",
     includes: [
       "Plus+ interior detail",
       "Standard wash",
@@ -113,7 +113,7 @@ export const services: ServiceTier[] = [
     priceCar: 599,
     duration: "Half day",
     summary:
-      "Multi-step decontamination, clay bar, and a CRMX coating with hydrophobic gloss that lasts.",
+      "Wash, iron decontamination, clay bar paint preparation, and a CRMX ceramic application with cure.",
     includes: [
       "Standard wash + iron decontamination",
       "Clay bar paint prep",

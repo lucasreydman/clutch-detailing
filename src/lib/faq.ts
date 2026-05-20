@@ -7,22 +7,22 @@ export const faqs: Faq[] = [
   },
   {
     q: "Do you actually use no water?",
-    a: "Our wash technique uses a fraction of what a traditional wash needs — up to 500 litres saved per car. We rely on snow foam, premium lubricated solutions, and the two-bucket contact method.",
+    a: "Our method uses a small fraction of the water of a traditional wash. Up to 500 litres saved per car. We rely on snow foam, premium lubricated solutions, and the two-bucket contact method.",
   },
   {
     q: "How do I book?",
-    a: "Pick a time directly on our booking page — it's an inline Calendly that shows real availability. If you'd rather chat first, email us.",
+    a: "Use the online booking page to see real-time availability and reserve a slot. You can also email us if you'd prefer to chat first.",
   },
   {
     q: "How long does a full detail take?",
-    a: "A standard wash is about 45 minutes. A Plus+ interior runs around 2½ to 3 hours. Ceramic coating is a half day.",
+    a: "A standard wash is about 45 minutes. A Plus+ interior runs around 2.5 to 3 hours. Ceramic coating is a half day.",
   },
   {
     q: "What if it rains?",
-    a: "We watch the forecast. If conditions don't allow a quality job, we'll reach out the morning of to reschedule at no charge.",
+    a: "We watch the forecast. If conditions don't allow a quality job we'll reach out the morning of to reschedule at no charge.",
   },
   {
     q: "How do I pay?",
-    a: "E-transfer or cash on completion. We don't ask for a deposit to book.",
+    a: "E-transfer or cash on completion. No deposit required to book.",
   },
 ];

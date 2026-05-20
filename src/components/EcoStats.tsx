@@ -21,10 +21,10 @@ export function EcoStats() {
         <div className="grid md:grid-cols-12 gap-12 items-end">
           <div className="md:col-span-5">
             <Reveal>
-              <p className="label-eyebrow text-bone/60 mb-4">Why waterless</p>
+              <p className="label-eyebrow text-bone/60 mb-4">Our approach</p>
               <h2 className="display-xl text-5xl md:text-7xl text-bone">
-                A wash that<br />
-                <span className="italic-display text-sand">gives back.</span>
+                Why we use<br />
+                <span className="italic-display text-sand">less water.</span>
               </h2>
             </Reveal>
           </div>
@@ -32,7 +32,7 @@ export function EcoStats() {
           <div className="md:col-span-7 md:pl-12">
             <Reveal delay={0.15}>
               <p className="text-lg md:text-xl text-bone/80 leading-relaxed max-w-xl">
-                A traditional driveway wash sends hundreds of litres of detergent runoff into the storm drain — and then onto the lake. Our method uses pH-balanced, biodegradable products and a fraction of the water. Same finish. Cleaner footprint.
+                A traditional driveway wash sends hundreds of litres of detergent runoff into the storm drain and then into the lake. Our method uses pH-balanced, biodegradable products and a small fraction of the water. The result is the same finish with a much cleaner footprint.
               </p>
             </Reveal>
           </div>

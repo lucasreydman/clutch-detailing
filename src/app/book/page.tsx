@@ -17,11 +17,11 @@ export default function BookPage() {
           <Reveal>
             <p className="label-eyebrow mb-6">Book your detail</p>
             <h1 className="display-xl text-5xl md:text-8xl text-forest max-w-[14ch]">
-              Pick a slot.<br />
-              <span className="italic-display text-moss">We'll handle the rest.</span>
+              Book a<br />
+              <span className="italic-display text-moss">detail.</span>
             </h1>
             <p className="mt-10 text-lg md:text-xl text-forest/75 max-w-2xl leading-relaxed">
-              Live availability below. No deposit to book — pay by e-transfer once the car's done and you're happy.
+              Real-time availability below. No deposit required. Payment by e-transfer or cash when the work is complete.
             </p>
           </Reveal>
         </div>

@@ -16,17 +16,17 @@ export function ServicesGrid() {
         <div className="grid md:grid-cols-12 gap-8 md:gap-12 mb-16 md:mb-24 items-end">
           <div className="md:col-span-7">
             <Reveal>
-              <p className="label-eyebrow mb-4">The catalogue</p>
+              <p className="label-eyebrow mb-4">Our services</p>
               <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[14ch]">
-                Four ways<br />
-                to <span className="italic-display text-moss">go clean.</span>
+                Pick the package<br />
+                <span className="italic-display text-moss">that fits.</span>
               </h2>
             </Reveal>
           </div>
           <div className="md:col-span-5">
             <Reveal delay={0.1}>
               <p className="text-lg text-forest/75 max-w-md leading-relaxed">
-                Quick refresh or a full restoration — every service comes with the same obsession over the details.
+                From a quick exterior wash to a full ceramic coating. The same level of care on every job.
               </p>
               <Link
                 href="/services"

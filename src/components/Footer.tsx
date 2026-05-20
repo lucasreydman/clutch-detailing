@@ -10,10 +10,10 @@ export function Footer() {
       <div className="relative mx-auto max-w-7xl px-5 md:px-8 py-20 md:py-28">
         <div className="grid md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-12 md:gap-8">
           <div>
-            <p className="label-eyebrow text-bone/60 mb-4">Ready when you are</p>
+            <p className="label-eyebrow text-bone/60 mb-4">Get in touch</p>
             <h3 className="display-xl text-4xl md:text-5xl text-bone mb-6">
-              Your driveway.<br />
-              <span className="italic-display text-sand">Our brushes.</span>
+              Book your<br />
+              <span className="italic-display text-sand">detail.</span>
             </h3>
             <BookNowButton variant="ghost" size="md" className="text-bone border-bone/30 hover:bg-bone hover:text-forest" />
           </div>
@@ -60,7 +60,15 @@ export function Footer() {
             © {new Date().getFullYear()} Clutch Detailing. Toronto, Canada.
           </p>
           <p className="text-xs text-bone/50 tracking-wide">
-            Established {site.founded}. Up to 500L of water saved per wash.
+            Built by{" "}
+            <a
+              href="https://lucasreydman.xyz"
+              target="_blank"
+              rel="noreferrer"
+              className="text-bone/80 hover:text-bone link-underline"
+            >
+              Lucas Reydman
+            </a>
           </p>
         </div>
       </div>

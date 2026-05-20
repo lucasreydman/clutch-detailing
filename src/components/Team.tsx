@@ -10,8 +10,7 @@ export function Team() {
         <Reveal>
           <p className="label-eyebrow mb-4">The team</p>
           <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[16ch] mb-20">
-            The two who<br />
-            <span className="italic-display text-moss">show up.</span>
+            Our <span className="italic-display text-moss">detailers.</span>
           </h2>
         </Reveal>
 
