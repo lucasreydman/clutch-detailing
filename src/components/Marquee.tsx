@@ -5,7 +5,7 @@ export function Marquee() {
     "Ceramic coating",
     "Hoggs Hollow",
     "Plus+ interior",
-    "Yonge & Lawrence",
+    "Surrounding neighbourhoods",
     "No deposit",
     "Up to 500L saved",
   ];

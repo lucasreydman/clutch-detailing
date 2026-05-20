@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "ceramic coating Toronto",
     "Lawrence Park car detailing",
     "Hoggs Hollow car wash",
-    "Yonge and Lawrence detailing",
+    "north Toronto car detailing",
     "eco-friendly car detailing",
   ],
   authors: [{ name: site.name }],

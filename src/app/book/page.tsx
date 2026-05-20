@@ -35,7 +35,7 @@ export default function BookPage() {
 
           <Reveal delay={0.1}>
             <div className="mt-12 grid sm:grid-cols-3 gap-4">
-              <Info label="Service area" value="Lawrence Park · Hoggs Hollow · Yonge & Lawrence" />
+              <Info label="Service area" value="Lawrence Park · Hoggs Hollow · Surrounding neighbourhoods" />
               <Info label="Reach us" value={site.email} href={`mailto:${site.email}`} />
               <Info label="Payment" value="E-transfer · cash on completion" />
             </div>

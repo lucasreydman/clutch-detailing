@@ -14,7 +14,7 @@ export function LocalBusinessJsonLd() {
     areaServed: [
       { "@type": "Place", name: "Lawrence Park, Toronto" },
       { "@type": "Place", name: "Hoggs Hollow, Toronto" },
-      { "@type": "Place", name: "Yonge & Lawrence, Toronto" },
+      { "@type": "Place", name: "North Toronto" },
     ],
     address: {
       "@type": "PostalAddress",

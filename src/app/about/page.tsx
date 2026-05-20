@@ -6,7 +6,7 @@ import { BookNowButton } from "@/components/BookNowButton";
 export const metadata: Metadata = {
   title: "About — Waterless Detailing in Toronto",
   description:
-    "Clutch Detailing is a hyper-local mobile detailing service serving Lawrence Park, Hoggs Hollow, and Yonge & Lawrence. Premium results with a fraction of the water.",
+    "Clutch Detailing is a hyper-local mobile detailing service exclusively serving Lawrence Park, Hoggs Hollow, and surrounding neighbourhoods. Premium results with a fraction of the water.",
 };
 
 export default function AboutPage() {
@@ -26,17 +26,17 @@ export default function AboutPage() {
             <div className="md:col-span-7">
               <Reveal>
                 <p className="text-xl md:text-2xl font-display text-forest leading-snug max-w-2xl">
-                  Clutch Detailing started in Lawrence Park with a simple idea — you shouldn't have to choose between a car that looks immaculate and a wash that's gentle on the city you live in.
+                  At Clutch Detailing we are committed to making the car-washing experience easy, convenient, and environmentally sustainable — all at the same time.
                 </p>
               </Reveal>
 
               <Reveal delay={0.1}>
                 <div className="mt-10 space-y-6 text-forest/80 leading-relaxed max-w-2xl">
                   <p>
-                    A driveway wash with a hose can send a few hundred litres of soapy runoff into the storm drain. Multiply that by every Saturday morning across the city — that's a lot of detergent ending up in Lake Ontario.
+                    Currently we're exclusively servicing Lawrence Park, Hoggs Hollow, and surrounding neighbourhoods. We come to your driveway with all our own gear so you don't have to lift a finger.
                   </p>
                   <p>
-                    Our entire approach is built around using less. Snow foam pre-wash to lift dirt before any contact. Two-bucket method with grit guards. Premium, pH-balanced products that are fully biodegradable. The result is a finish you'd expect from a pro shop, without the runoff.
+                    A driveway wash with a hose can send hundreds of litres of soapy runoff into the storm drain. Multiply that by every Saturday morning across the city — that's a lot of detergent ending up in Lake Ontario. Our approach is built around using less. Snow foam pre-wash to lift dirt before any contact. Two-bucket method with grit guards. pH-balanced, biodegradable products.
                   </p>
                   <p>
                     We're a small, local team — and we like it that way. You'll see the same faces every time. We learn your car, we learn your standards, and we get faster and better with every visit.
@@ -51,7 +51,7 @@ export default function AboutPage() {
                   <p className="label-eyebrow mb-4">At a glance</p>
                   <dl className="space-y-5">
                     <Row k="Founded" v="2024 · Lawrence Park" />
-                    <Row k="Service area" v="Lawrence Park · Hoggs Hollow · Yonge & Lawrence" />
+                    <Row k="Service area" v="Lawrence Park · Hoggs Hollow · Surrounding neighbourhoods" />
                     <Row k="Method" v="Waterless / low-water wash" />
                     <Row k="Products" v="Chemical Guys · CRMX ceramics" />
                     <Row k="Booking" v="Live calendar, no deposit" />

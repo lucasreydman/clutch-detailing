@@ -23,7 +23,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-bone/80">
               <li>Lawrence Park</li>
               <li>Hoggs Hollow</li>
-              <li>Yonge & Lawrence</li>
+              <li>Surrounding neighbourhoods</li>
               <li className="pt-2">{site.city}, {site.region}</li>
             </ul>
           </div>

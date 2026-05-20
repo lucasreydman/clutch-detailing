@@ -69,7 +69,7 @@ export function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.75 }}
           className="mt-8 max-w-xl text-lg md:text-xl text-forest/75 leading-relaxed"
         >
-          Premium mobile car detailing — done in your driveway, with a fraction of the water of a traditional wash. Serving Lawrence Park, Hoggs Hollow, and Yonge & Lawrence.
+          Premium mobile car detailing — done in your driveway, with a fraction of the water of a traditional wash. Exclusively serving Lawrence Park, Hoggs Hollow, and surrounding neighbourhoods.
         </motion.p>
 
         {/* CTAs */}

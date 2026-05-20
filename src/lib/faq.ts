@@ -3,7 +3,7 @@ export type Faq = { q: string; a: string };
 export const faqs: Faq[] = [
   {
     q: "Where do you operate?",
-    a: "We're a mobile service exclusive to Lawrence Park, Hoggs Hollow, and the Yonge & Lawrence corridor in Toronto. We come to your driveway.",
+    a: "We're a mobile service exclusively serving Lawrence Park, Hoggs Hollow, and surrounding neighbourhoods in Toronto. We come to your driveway.",
   },
   {
     q: "Do you actually use no water?",
