@@ -174,3 +174,86 @@
 @media (max-width: 768px) {
   .calendly-inline-widget { height: 1080px; }
 }
+
+/* Popup modal — react-calendly defaults size the popup tiny; force it
+   to a proper modal that fills most of the viewport. */
+.calendly-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  background: rgba(20, 32, 26, 0.6) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 2vh 2vw !important;
+}
+
+.calendly-overlay .calendly-popup {
+  position: relative !important;
+  width: min(96vw, 1100px) !important;
+  height: min(94vh, 880px) !important;
+  max-width: 1100px !important;
+  max-height: 880px !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  background: var(--color-bone) !important;
+  box-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.calendly-overlay .calendly-popup-content {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.calendly-overlay .calendly-popup-content iframe,
+.calendly-overlay .calendly-popup iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  display: block !important;
+}
+
+.calendly-overlay .calendly-popup-close,
+.calendly-popup-close {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  width: 36px !important;
+  height: 36px !important;
+  background: var(--color-bone) !important;
+  background-image: none !important;
+  border-radius: 999px !important;
+  z-index: 10 !important;
+  box-shadow: 0 2px 8px rgba(20, 32, 26, 0.15) !important;
+  cursor: pointer !important;
+}
+.calendly-overlay .calendly-popup-close::before,
+.calendly-overlay .calendly-popup-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 1.5px;
+  background: var(--color-forest);
+  transform-origin: center;
+}
+.calendly-overlay .calendly-popup-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.calendly-overlay .calendly-popup-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Tighter sizing on small screens */
+@media (max-width: 768px) {
+  .calendly-overlay { padding: 0 !important; }
+  .calendly-overlay .calendly-popup {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+  }
+}
