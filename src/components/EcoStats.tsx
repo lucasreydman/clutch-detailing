@@ -21,7 +21,7 @@ export function EcoStats() {
         <div className="grid md:grid-cols-12 gap-12 items-end">
           <div className="md:col-span-5">
             <Reveal>
-              <p className="label-eyebrow text-bone/60 mb-4">Our approach</p>
+              <p className="label-eyebrow mb-4">Our approach</p>
               <h2 className="display-xl text-5xl md:text-7xl text-bone text-balance max-w-[14ch]">
                 Why we use <span className="italic-display text-sand">less water.</span>
               </h2>

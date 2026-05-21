@@ -8,27 +8,17 @@ export function Footer() {
       <div className="absolute inset-0 bg-grain pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-5 md:px-8 py-20 md:py-28">
-        <div className="grid md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-12 md:gap-8">
+        <div className="grid md:grid-cols-[1.6fr_1fr_1fr] gap-12 md:gap-8">
           <div>
-            <p className="label-eyebrow text-bone/60 mb-4">Get in touch</p>
+            <p className="label-eyebrow mb-4">Get in touch</p>
             <h3 className="display-xl text-4xl md:text-5xl text-bone mb-6 text-balance max-w-[12ch]">
               Book your <span className="italic-display text-sand">detail.</span>
             </h3>
-            <BookNowButton variant="ghost" size="md" className="text-bone border-bone/30 hover:bg-bone hover:text-forest" />
+            <BookNowButton variant="ghostDark" size="md" />
           </div>
 
           <div>
-            <p className="label-eyebrow text-bone/50 mb-4">Visit</p>
-            <ul className="space-y-2 text-sm text-bone/80">
-              <li>Lawrence Park</li>
-              <li>Hoggs Hollow</li>
-              <li>Surrounding neighbourhoods</li>
-              <li className="pt-2">{site.city}, {site.region}</li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="label-eyebrow text-bone/50 mb-4">Reach</p>
+            <p className="label-eyebrow mb-4">Reach</p>
             <ul className="space-y-2 text-sm text-bone/80">
               <li>
                 <a href={`mailto:${site.email}`} className="link-underline hover:text-bone">
@@ -44,7 +34,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="label-eyebrow text-bone/50 mb-4">Site</p>
+            <p className="label-eyebrow mb-4">Site</p>
             <ul className="space-y-2 text-sm text-bone/80">
               <li><Link href="/services" className="link-underline hover:text-bone">Services</Link></li>
               <li><Link href="/about" className="link-underline hover:text-bone">About</Link></li>

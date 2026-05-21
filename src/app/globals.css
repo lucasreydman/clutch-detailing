@@ -112,7 +112,10 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     font-weight: 500;
-    color: color-mix(in oklab, var(--color-forest) 70%, transparent);
+    /* Inherit color from parent; opacity makes it look muted on any background.
+       Override with text-* utilities for full opacity if needed. */
+    color: inherit;
+    opacity: 0.7;
   }
 
   /* Smooth marquee */

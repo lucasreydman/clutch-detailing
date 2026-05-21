@@ -7,7 +7,13 @@ import clsx from "clsx";
 
 type Props = {
   size?: "sm" | "md" | "lg";
-  variant?: "primary" | "ghost";
+  /**
+   * primary       → dark button for light backgrounds (default)
+   * primaryDark   → light button for dark (forest) backgrounds
+   * ghost         → outlined button for light backgrounds
+   * ghostDark     → outlined button for dark (forest) backgrounds
+   */
+  variant?: "primary" | "primaryDark" | "ghost" | "ghostDark";
   full?: boolean;
   label?: string;
   /** Override Calendly URL (e.g. a per-service deep link) */
@@ -42,8 +48,12 @@ export function BookNowButton({
   const variants: Record<NonNullable<Props["variant"]>, string> = {
     primary:
       "bg-forest text-bone hover:bg-forest-soft ring-luxe hover:shadow-luxe hover:-translate-y-0.5",
+    primaryDark:
+      "bg-bone text-forest hover:bg-bone-warm hover:shadow-luxe hover:-translate-y-0.5",
     ghost:
       "bg-transparent text-forest border border-forest/20 hover:border-forest hover:bg-forest hover:text-bone",
+    ghostDark:
+      "bg-transparent text-bone border border-bone/30 hover:bg-bone hover:text-forest hover:border-bone",
   };
 
   return (

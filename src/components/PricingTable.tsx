@@ -130,14 +130,11 @@ export function PricingTable() {
               className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-moss/30 blur-3xl"
             />
             <div className="relative">
-              <p className="label-eyebrow text-bone/60 mb-4">No deposit · No surprise fees</p>
+              <p className="label-eyebrow mb-4">No deposit · No surprise fees</p>
               <h3 className="display-xl text-4xl md:text-5xl text-bone max-w-[18ch] mb-8 text-balance">
                 Book your detail online.
               </h3>
-              <BookNowButton
-                size="lg"
-                className="bg-bone text-forest hover:bg-bone-warm hover:text-forest"
-              />
+              <BookNowButton size="lg" variant="primaryDark" />
             </div>
           </div>
         </Reveal>
