@@ -15,7 +15,7 @@ export function FAQ() {
           <div className="md:col-span-4">
             <Reveal>
               <p className="label-eyebrow mb-4">FAQ</p>
-              <h2 className="display-xl text-4xl md:text-6xl text-forest text-balance">
+              <h2 className="display-xl text-4xl md:text-5xl lg:text-6xl text-forest text-balance">
                 The usual <span className="italic-display text-moss">questions.</span>
               </h2>
             </Reveal>
