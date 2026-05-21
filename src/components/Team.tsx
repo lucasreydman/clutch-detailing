@@ -5,15 +5,8 @@ import { Reveal } from "./Reveal";
 
 export function Team() {
   return (
-    <section className="bg-bone py-24 md:py-36">
+    <section className="bg-bone py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
-        <Reveal>
-          <p className="label-eyebrow mb-4">The team</p>
-          <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[16ch] mb-20 text-balance">
-            Our <span className="italic-display text-moss">detailers.</span>
-          </h2>
-        </Reveal>
-
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {team.map((m, i) => (
             <Reveal key={m.name} delay={i * 0.1}>
