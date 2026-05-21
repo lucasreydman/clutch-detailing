@@ -17,7 +17,7 @@ export function Testimonials() {
             <span className="label-eyebrow">Reviews</span>
             <span className="block flex-1 h-px bg-forest/15" />
           </div>
-          <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[18ch] mb-16">
+          <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[18ch] mb-16 text-balance">
             What our <span className="italic-display text-moss">clients say.</span>
           </h2>
         </Reveal>
@@ -27,7 +27,7 @@ export function Testimonials() {
             <Reveal key={t.name} delay={(i % 3) * 0.1}>
               <figure className="h-full rounded-3xl bg-bone p-8 md:p-10 border hairline flex flex-col">
                 <Quote />
-                <blockquote className="font-display text-xl md:text-2xl text-forest leading-snug tracking-tight mt-6 mb-8 flex-1">
+                <blockquote className="font-display text-xl md:text-2xl text-forest leading-snug tracking-tight mt-6 mb-8 flex-1 text-pretty">
                   "{t.quote}"
                 </blockquote>
                 <figcaption className="flex items-center justify-between pt-6 border-t hairline">

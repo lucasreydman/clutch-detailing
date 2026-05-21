@@ -15,7 +15,7 @@ export function FAQ() {
           <div className="md:col-span-4">
             <Reveal>
               <p className="label-eyebrow mb-4">FAQ</p>
-              <h2 className="display-xl text-4xl md:text-6xl text-forest">
+              <h2 className="display-xl text-4xl md:text-6xl text-forest text-balance">
                 The usual <span className="italic-display text-moss">questions.</span>
               </h2>
             </Reveal>
@@ -52,7 +52,7 @@ export function FAQ() {
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
                       >
-                        <p className="pb-7 text-forest/75 leading-relaxed max-w-2xl text-[15px]">
+                        <p className="pb-7 text-forest/75 leading-relaxed max-w-2xl text-[15px] text-pretty">
                           {f.a}
                         </p>
                       </motion.div>

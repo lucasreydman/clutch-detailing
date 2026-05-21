@@ -51,11 +51,10 @@ export function Hero() {
         </motion.div>
 
         {/* Headline */}
-        <h1 className="display-xl text-[clamp(2.75rem,8.5vw,7.5rem)] max-w-[16ch] text-forest">
+        <h1 className="display-xl text-[clamp(2.75rem,8.5vw,7.5rem)] max-w-[16ch] text-forest text-balance">
           <Word delay={0.25}>Mobile</Word>{" "}
           <Word delay={0.32}>car</Word>{" "}
-          <Word delay={0.39}>detailing,</Word>
-          <br />
+          <Word delay={0.39}>detailing,</Word>{" "}
           <span className="text-moss">
             <Word delay={0.5} italic>done</Word>{" "}
             <Word delay={0.57} italic>at your</Word>{" "}
@@ -68,7 +67,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.75 }}
-          className="mt-8 max-w-xl text-lg md:text-xl text-forest/75 leading-relaxed"
+          className="mt-8 max-w-xl text-lg md:text-xl text-forest/75 leading-relaxed text-pretty"
         >
           Professional results with biodegradable products and a fraction of the water of a traditional wash. Exclusively serving Lawrence Park, Hoggs Hollow, and surrounding neighbourhoods.
         </motion.p>

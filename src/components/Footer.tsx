@@ -11,9 +11,8 @@ export function Footer() {
         <div className="grid md:grid-cols-[1.4fr_1fr_1fr_1fr] gap-12 md:gap-8">
           <div>
             <p className="label-eyebrow text-bone/60 mb-4">Get in touch</p>
-            <h3 className="display-xl text-4xl md:text-5xl text-bone mb-6">
-              Book your<br />
-              <span className="italic-display text-sand">detail.</span>
+            <h3 className="display-xl text-4xl md:text-5xl text-bone mb-6 text-balance max-w-[12ch]">
+              Book your <span className="italic-display text-sand">detail.</span>
             </h3>
             <BookNowButton variant="ghost" size="md" className="text-bone border-bone/30 hover:bg-bone hover:text-forest" />
           </div>

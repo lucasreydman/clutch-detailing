@@ -26,9 +26,8 @@ export function Process() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <p className="label-eyebrow mb-4">How it works</p>
-          <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[14ch] mb-20">
-            Book online.<br />
-            <span className="italic-display text-moss">We come to you.</span>
+          <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[14ch] mb-20 text-balance">
+            Book online. <span className="italic-display text-moss">We come to you.</span>
           </h2>
         </Reveal>
 
@@ -48,7 +47,7 @@ export function Process() {
                 <h3 className="font-display text-2xl md:text-3xl text-forest tracking-tight mb-3">
                   {s.title}
                 </h3>
-                <p className="text-forest/70 leading-relaxed max-w-sm">{s.body}</p>
+                <p className="text-forest/70 leading-relaxed max-w-sm text-pretty">{s.body}</p>
               </div>
             </Reveal>
           ))}

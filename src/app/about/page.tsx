@@ -16,22 +16,21 @@ export default function AboutPage() {
         <div className="mx-auto max-w-5xl px-5 md:px-8">
           <Reveal>
             <p className="label-eyebrow mb-6">Our story</p>
-            <h1 className="display-xl text-5xl md:text-8xl text-forest max-w-[15ch]">
-              The best wash<br />
-              <span className="italic-display text-moss">with the lightest footprint.</span>
+            <h1 className="display-xl text-5xl md:text-8xl text-forest max-w-[15ch] text-balance">
+              The best wash <span className="italic-display text-moss">with the lightest footprint.</span>
             </h1>
           </Reveal>
 
           <div className="grid md:grid-cols-12 gap-12 mt-20 md:mt-28">
             <div className="md:col-span-7">
               <Reveal>
-                <p className="text-xl md:text-2xl font-display text-forest leading-snug max-w-2xl">
+                <p className="text-xl md:text-2xl font-display text-forest leading-snug max-w-2xl text-pretty">
                   At Clutch Detailing we are committed to making the car-washing experience easy, convenient, and environmentally sustainable — all at the same time.
                 </p>
               </Reveal>
 
               <Reveal delay={0.1}>
-                <div className="mt-10 space-y-6 text-forest/80 leading-relaxed max-w-2xl">
+                <div className="mt-10 space-y-6 text-forest/80 leading-relaxed max-w-2xl text-pretty">
                   <p>
                     Currently we're exclusively servicing Lawrence Park, Hoggs Hollow, and surrounding neighbourhoods. We come to your driveway with all our own gear so you don't have to lift a finger.
                   </p>

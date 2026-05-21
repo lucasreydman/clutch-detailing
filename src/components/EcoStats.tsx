@@ -22,16 +22,15 @@ export function EcoStats() {
           <div className="md:col-span-5">
             <Reveal>
               <p className="label-eyebrow text-bone/60 mb-4">Our approach</p>
-              <h2 className="display-xl text-5xl md:text-7xl text-bone">
-                Why we use<br />
-                <span className="italic-display text-sand">less water.</span>
+              <h2 className="display-xl text-5xl md:text-7xl text-bone text-balance max-w-[14ch]">
+                Why we use <span className="italic-display text-sand">less water.</span>
               </h2>
             </Reveal>
           </div>
 
           <div className="md:col-span-7 md:pl-12">
             <Reveal delay={0.15}>
-              <p className="text-lg md:text-xl text-bone/80 leading-relaxed max-w-xl">
+              <p className="text-lg md:text-xl text-bone/80 leading-relaxed max-w-xl text-pretty">
                 A traditional driveway wash sends hundreds of litres of detergent runoff into the storm drain and then into the lake. Our method uses pH-balanced, biodegradable products and a small fraction of the water. The result is the same finish with a much cleaner footprint.
               </p>
             </Reveal>

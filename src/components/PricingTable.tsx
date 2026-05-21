@@ -43,7 +43,7 @@ export function PricingTable() {
                                 </span>
                               )}
                             </div>
-                            <p className="mt-2 text-forest/70 leading-relaxed text-[15px]">
+                            <p className="mt-2 text-forest/70 leading-relaxed text-[15px] text-pretty">
                               {s.summary}
                             </p>
                             <p className="mt-3 text-xs label-eyebrow">{s.duration}</p>
@@ -131,7 +131,7 @@ export function PricingTable() {
             />
             <div className="relative">
               <p className="label-eyebrow text-bone/60 mb-4">No deposit · No surprise fees</p>
-              <h3 className="display-xl text-4xl md:text-5xl text-bone max-w-[18ch] mb-8">
+              <h3 className="display-xl text-4xl md:text-5xl text-bone max-w-[18ch] mb-8 text-balance">
                 Book your detail online.
               </h3>
               <BookNowButton

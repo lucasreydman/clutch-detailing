@@ -9,7 +9,7 @@ export function Team() {
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <Reveal>
           <p className="label-eyebrow mb-4">The team</p>
-          <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[16ch] mb-20">
+          <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[16ch] mb-20 text-balance">
             Our <span className="italic-display text-moss">detailers.</span>
           </h2>
         </Reveal>
@@ -40,7 +40,7 @@ export function Team() {
                   {m.name}
                 </h3>
                 <p className="text-moss mt-1 italic-display">{m.role}</p>
-                <p className="mt-6 text-forest/75 leading-relaxed">{m.bio}</p>
+                <p className="mt-6 text-forest/75 leading-relaxed text-pretty">{m.bio}</p>
               </article>
             </Reveal>
           ))}

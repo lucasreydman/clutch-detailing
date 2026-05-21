@@ -19,15 +19,14 @@ export function ServicesGrid() {
           <div className="md:col-span-7">
             <Reveal>
               <p className="label-eyebrow mb-4">Our services</p>
-              <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[14ch]">
-                Pick the package<br />
-                <span className="italic-display text-moss">that fits.</span>
+              <h2 className="display-xl text-5xl md:text-7xl text-forest max-w-[14ch] text-balance">
+                Pick the package <span className="italic-display text-moss">that fits.</span>
               </h2>
             </Reveal>
           </div>
           <div className="md:col-span-5">
             <Reveal delay={0.1}>
-              <p className="text-lg text-forest/75 max-w-md leading-relaxed">
+              <p className="text-lg text-forest/75 max-w-md leading-relaxed text-pretty">
                 From a quick exterior wash to a full ceramic coating. The same level of care on every job.
               </p>
               <Link
@@ -70,7 +69,7 @@ export function ServicesGrid() {
                   {s.name}
                 </h3>
 
-                <p className="text-forest/70 leading-relaxed mb-6 max-w-md">
+                <p className="text-forest/70 leading-relaxed mb-6 max-w-md text-pretty">
                   {s.summary}
                 </p>
 

@@ -16,11 +16,10 @@ export default function BookPage() {
         <div className="mx-auto max-w-5xl px-5 md:px-8">
           <Reveal>
             <p className="label-eyebrow mb-6">Book your detail</p>
-            <h1 className="display-xl text-5xl md:text-8xl text-forest max-w-[14ch]">
-              Book a<br />
-              <span className="italic-display text-moss">detail.</span>
+            <h1 className="display-xl text-5xl md:text-8xl text-forest max-w-[10ch] text-balance">
+              Book a <span className="italic-display text-moss">detail.</span>
             </h1>
-            <p className="mt-10 text-lg md:text-xl text-forest/75 max-w-2xl leading-relaxed">
+            <p className="mt-10 text-lg md:text-xl text-forest/75 max-w-2xl leading-relaxed text-pretty">
               Real-time availability below. No deposit required. Payment by e-transfer or cash when the work is complete.
             </p>
           </Reveal>
