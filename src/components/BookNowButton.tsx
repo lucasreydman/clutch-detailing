@@ -10,6 +10,8 @@ type Props = {
   variant?: "primary" | "ghost";
   full?: boolean;
   label?: string;
+  /** Override Calendly URL (e.g. a per-service deep link) */
+  url?: string;
   className?: string;
 };
 
@@ -18,6 +20,7 @@ export function BookNowButton({
   variant = "primary",
   full = false,
   label = "Book your detail",
+  url,
   className,
 }: Props) {
   const [open, setOpen] = useState(false);
@@ -26,6 +29,8 @@ export function BookNowButton({
   useEffect(() => {
     setRoot(document.body);
   }, []);
+
+  const calendlyUrl = url || site.calendlyUrl;
 
   const base =
     "group relative inline-flex items-center justify-center gap-2 font-medium tracking-tight rounded-full transition-all duration-300 will-change-transform";
@@ -53,7 +58,7 @@ export function BookNowButton({
 
       {root && (
         <PopupModal
-          url={site.calendlyUrl}
+          url={calendlyUrl}
           onModalClose={() => setOpen(false)}
           open={open}
           rootElement={root}

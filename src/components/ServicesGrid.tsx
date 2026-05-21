@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { services } from "@/lib/services";
+import { services, bookingUrl } from "@/lib/services";
+import { site } from "@/lib/site";
+import { BookNowButton } from "./BookNowButton";
 import { Reveal } from "./Reveal";
 
 const featured = ["standard-wash", "full-service", "all-in", "ceramic"];
@@ -40,58 +42,81 @@ export function ServicesGrid() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-px bg-forest/10 border hairline rounded-3xl overflow-hidden">
-          {items.map((s, i) => (
-            <motion.article
-              key={s.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
-              className="group bg-bone p-8 md:p-12 hover:bg-bone-warm transition-colors duration-500"
-            >
-              <div className="flex items-start justify-between gap-6 mb-6">
-                <span className="label-eyebrow">{s.category}</span>
-                <span className="font-display text-3xl md:text-4xl text-forest tabular-nums">
-                  ${s.priceCar}
-                  {s.priceSuv && (
-                    <span className="text-base text-forest/45 ml-1">
-                      / ${s.priceSuv}
-                    </span>
+          {items.map((s, i) => {
+            const hasBoth = !!s.calendlyCar && !!s.calendlySuv;
+            const singleUrl = bookingUrl(site.calendlyUrl, s.calendlyCar);
+            return (
+              <motion.article
+                key={s.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+                className="group bg-bone p-8 md:p-12 hover:bg-bone-warm transition-colors duration-500"
+              >
+                <div className="flex items-start justify-between gap-6 mb-6">
+                  <span className="label-eyebrow">{s.category}</span>
+                  <span className="font-display text-3xl md:text-4xl text-forest tabular-nums">
+                    ${s.priceCar}
+                    {s.priceSuv && (
+                      <span className="text-base text-forest/45 ml-1">
+                        / ${s.priceSuv}
+                      </span>
+                    )}
+                  </span>
+                </div>
+
+                <h3 className="font-display text-3xl md:text-4xl text-forest mb-3 tracking-tight">
+                  {s.name}
+                </h3>
+
+                <p className="text-forest/70 leading-relaxed mb-6 max-w-md">
+                  {s.summary}
+                </p>
+
+                <ul className="space-y-2">
+                  {s.includes.slice(0, 3).map((inc) => (
+                    <li key={inc} className="flex items-start gap-2 text-sm text-forest/80">
+                      <span className="mt-2 block w-1 h-1 rounded-full bg-moss" />
+                      {inc}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-8 pt-6 border-t hairline flex flex-wrap items-center justify-between gap-3">
+                  <span className="text-xs text-forest/50 tracking-wide uppercase">
+                    {s.duration}
+                  </span>
+
+                  {hasBoth ? (
+                    <div className="flex items-center gap-2">
+                      <BookNowButton
+                        size="sm"
+                        variant="ghost"
+                        label="Car"
+                        url={bookingUrl(site.calendlyUrl, s.calendlyCar)}
+                      />
+                      <BookNowButton
+                        size="sm"
+                        variant="ghost"
+                        label="SUV / Minivan"
+                        url={bookingUrl(site.calendlyUrl, s.calendlySuv)}
+                      />
+                    </div>
+                  ) : s.calendlyCar ? (
+                    <BookNowButton size="sm" label="Book this" url={singleUrl} />
+                  ) : (
+                    <Link
+                      href="/services"
+                      className="text-sm font-medium text-forest link-underline"
+                    >
+                      Add to any wash →
+                    </Link>
                   )}
-                </span>
-              </div>
-
-              <h3 className="font-display text-3xl md:text-4xl text-forest mb-3 tracking-tight">
-                {s.name}
-              </h3>
-
-              <p className="text-forest/70 leading-relaxed mb-6 max-w-md">
-                {s.summary}
-              </p>
-
-              <ul className="space-y-2">
-                {s.includes.slice(0, 3).map((inc) => (
-                  <li key={inc} className="flex items-start gap-2 text-sm text-forest/80">
-                    <span className="mt-2 block w-1 h-1 rounded-full bg-moss" />
-                    {inc}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8 pt-6 border-t hairline flex items-center justify-between">
-                <span className="text-xs text-forest/50 tracking-wide uppercase">
-                  {s.duration}
-                </span>
-                <Link
-                  href="/book"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-forest group-hover:gap-3 transition-all"
-                >
-                  Book this
-                  <span aria-hidden>→</span>
-                </Link>
-              </div>
-            </motion.article>
-          ))}
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

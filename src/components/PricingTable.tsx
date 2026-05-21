@@ -1,6 +1,7 @@
 "use client";
 
-import { services, addOns } from "@/lib/services";
+import { services, addOns, bookingUrl } from "@/lib/services";
+import { site } from "@/lib/site";
 import { Reveal } from "./Reveal";
 import { BookNowButton } from "./BookNowButton";
 
@@ -25,46 +26,74 @@ export function PricingTable() {
               </Reveal>
 
               <div className="border-t hairline">
-                {items.map((s, i) => (
-                  <Reveal key={s.id} delay={i * 0.05}>
-                    <div className="group grid grid-cols-[1fr_auto] md:grid-cols-[1fr_auto_auto] gap-6 items-start py-8 border-b hairline hover:bg-bone-warm/40 transition-colors duration-300 px-2 -mx-2 rounded">
-                      <div className="max-w-xl">
-                        <div className="flex items-baseline gap-3">
-                          <h3 className="font-display text-2xl md:text-3xl text-forest tracking-tight">
-                            {s.name}
-                          </h3>
-                          {s.highlight && (
-                            <span className="text-[10px] tracking-[0.2em] uppercase font-medium text-moss bg-moss/10 px-2 py-0.5 rounded-full">
-                              Popular
+                {items.map((s, i) => {
+                  const hasBoth = !!s.calendlyCar && !!s.calendlySuv;
+                  return (
+                    <Reveal key={s.id} delay={i * 0.05}>
+                      <div className="group py-8 border-b hairline hover:bg-bone-warm/40 transition-colors duration-300 px-2 -mx-2 rounded">
+                        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-start">
+                          <div className="max-w-xl">
+                            <div className="flex items-baseline gap-3">
+                              <h3 className="font-display text-2xl md:text-3xl text-forest tracking-tight">
+                                {s.name}
+                              </h3>
+                              {s.highlight && (
+                                <span className="text-[10px] tracking-[0.2em] uppercase font-medium text-moss bg-moss/10 px-2 py-0.5 rounded-full">
+                                  Popular
+                                </span>
+                              )}
+                            </div>
+                            <p className="mt-2 text-forest/70 leading-relaxed text-[15px]">
+                              {s.summary}
+                            </p>
+                            <p className="mt-3 text-xs label-eyebrow">{s.duration}</p>
+                          </div>
+
+                          <div className="flex flex-col items-end gap-3 tabular-nums">
+                            <div className="font-display text-2xl text-forest text-right leading-tight">
+                              ${s.priceCar}
+                              {s.priceSuv && (
+                                <span className="block text-base text-forest/50">
+                                  ${s.priceSuv}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Booking row — under the description, full width */}
+                        <div className="mt-5 flex flex-wrap items-center gap-2 justify-end">
+                          {hasBoth ? (
+                            <>
+                              <BookNowButton
+                                size="sm"
+                                variant="ghost"
+                                label={`Book Car · $${s.priceCar}`}
+                                url={bookingUrl(site.calendlyUrl, s.calendlyCar)}
+                              />
+                              <BookNowButton
+                                size="sm"
+                                variant="ghost"
+                                label={`Book SUV/Minivan · $${s.priceSuv}`}
+                                url={bookingUrl(site.calendlyUrl, s.calendlySuv)}
+                              />
+                            </>
+                          ) : s.calendlyCar ? (
+                            <BookNowButton
+                              size="sm"
+                              label="Book this"
+                              url={bookingUrl(site.calendlyUrl, s.calendlyCar)}
+                            />
+                          ) : (
+                            <span className="text-xs text-forest/55 italic-display pr-2">
+                              Add-on — select during checkout of any wash
                             </span>
                           )}
                         </div>
-                        <p className="mt-2 text-forest/70 leading-relaxed text-[15px]">
-                          {s.summary}
-                        </p>
-                        <p className="mt-3 text-xs label-eyebrow">{s.duration}</p>
                       </div>
-
-                      <div className="hidden md:block text-right tabular-nums font-display text-2xl text-forest/85 self-center min-w-[6rem]">
-                        ${s.priceCar}
-                        {s.priceSuv && (
-                          <span className="block text-base text-forest/50">
-                            ${s.priceSuv}
-                          </span>
-                        )}
-                      </div>
-
-                      <div className="text-right tabular-nums font-display text-2xl text-forest md:hidden">
-                        ${s.priceCar}
-                        {s.priceSuv && (
-                          <span className="block text-base text-forest/50">
-                            / ${s.priceSuv}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </Reveal>
-                ))}
+                    </Reveal>
+                  );
+                })}
               </div>
             </div>
           );
@@ -87,6 +116,9 @@ export function PricingTable() {
                 </div>
               ))}
             </div>
+            <p className="mt-4 text-sm text-forest/60">
+              Add-ons are selected during the booking flow for any service.
+            </p>
           </div>
         </Reveal>
 

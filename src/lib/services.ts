@@ -7,6 +7,12 @@ export type ServiceTier = {
   duration?: string;
   summary: string;
   includes: string[];
+  /** Calendly event slug for the car-sized variant (appended to site.calendlyUrl) */
+  calendlyCar?: string;
+  /** Calendly event slug for the SUV/Minivan variant */
+  calendlySuv?: string;
+  /** Add-on within other bookings; no standalone Calendly event */
+  addOnOnly?: boolean;
   highlight?: boolean;
 };
 
@@ -26,6 +32,8 @@ export const services: ServiceTier[] = [
       "Microfibre contact dry",
       "Door jambs wiped down",
     ],
+    calendlyCar: "car-wash",
+    calendlySuv: "waterless-car-wash-suvminivan",
   },
   {
     id: "wheel-tire",
@@ -40,6 +48,7 @@ export const services: ServiceTier[] = [
       "Barrel and face agitation",
       "Tire dressing — Chemical Guys",
     ],
+    addOnOnly: true,
   },
   {
     id: "interior-standard",
@@ -56,6 +65,8 @@ export const services: ServiceTier[] = [
       "Plastic and trim cleaner",
       "Streak-free interior glass",
     ],
+    calendlyCar: "interior-standard-1",
+    calendlySuv: "interior-standard-clone",
   },
   {
     id: "interior-plus",
@@ -72,6 +83,8 @@ export const services: ServiceTier[] = [
       "Leather cleaning + conditioning",
       "Pet hair removal",
     ],
+    calendlyCar: "plus",
+    calendlySuv: "plus-suvminivan",
     highlight: true,
   },
   {
@@ -88,6 +101,8 @@ export const services: ServiceTier[] = [
       "Standard interior detail",
       "Wheels + tires dressed",
     ],
+    calendlyCar: "full-service",
+    calendlySuv: "full-service-suvminivan",
   },
   {
     id: "all-in",
@@ -104,6 +119,8 @@ export const services: ServiceTier[] = [
       "Wheel & Tire package",
       "Final inspection",
     ],
+    calendlyCar: "all-in-suv-minivan-clone",
+    calendlySuv: "all-in-suv-minivan",
     highlight: true,
   },
   {
@@ -120,6 +137,7 @@ export const services: ServiceTier[] = [
       "CRMX ceramic application",
       "Cure + final wipe-down",
     ],
+    calendlyCar: "ceramic-coating-550",
   },
 ];
 
@@ -128,3 +146,15 @@ export const addOns = [
   { name: "Wheel Cleaning", price: 10 },
   { name: "Pet Hair Removal", price: "10–15" },
 ] as const;
+
+/**
+ * Build a full Calendly URL for a service variant.
+ * Falls back to the account-root URL (event picker) if no slug.
+ */
+export function bookingUrl(
+  baseCalendlyUrl: string,
+  slug: string | undefined
+): string {
+  if (!slug) return baseCalendlyUrl;
+  return `${baseCalendlyUrl.replace(/\/$/, "")}/${slug}`;
+}
