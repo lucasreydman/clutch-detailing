@@ -22,7 +22,7 @@ export function LocalBusinessJsonLd() {
       addressRegion: "ON",
       addressCountry: "CA",
     },
-    sameAs: [site.social.instagram],
+    sameAs: [site.social.instagram, site.social.linkedin],
   };
   return (
     <script

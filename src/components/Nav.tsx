@@ -55,7 +55,11 @@ export function Nav() {
         }`}
       >
         <div className="mx-auto max-w-7xl px-5 md:px-8 h-16 md:h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 group">
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 group min-h-[44px] tap touch-manipulation"
+            aria-label="Clutch Detailing — home"
+          >
             <Logo />
             <span className="font-display text-lg md:text-xl tracking-tight text-forest">
               Clutch <span className="italic-display text-moss">Detailing</span>

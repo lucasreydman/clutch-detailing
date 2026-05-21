@@ -4,6 +4,8 @@ export type TeamMember = {
   bio: string;
   linkedin: string;
   initials: string;
+  phone: string;
+  phoneDisplay: string;
 };
 
 export const team: TeamMember[] = [
@@ -13,6 +15,8 @@ export const team: TeamMember[] = [
     bio: "Alex handles operations end to end, from product selection through to the final inspection on every job.",
     linkedin: "https://www.linkedin.com/in/alex-reydman-751b92364/",
     initials: "AR",
+    phone: "+16472746958",
+    phoneDisplay: "(647) 274-6958",
   },
   {
     name: "Matthew Petko",
@@ -20,5 +24,7 @@ export const team: TeamMember[] = [
     bio: "Matthew focuses on the details a quick wash always skips. Vent slats, stitching, badge edges, and door jambs.",
     linkedin: "https://www.linkedin.com/in/matthew-p-a0b210326/",
     initials: "MP",
+    phone: "+16475171020",
+    phoneDisplay: "(647) 517-1020",
   },
 ];

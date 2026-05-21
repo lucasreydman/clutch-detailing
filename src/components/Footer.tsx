@@ -19,15 +19,33 @@ export function Footer() {
 
           <div>
             <p className="label-eyebrow mb-4">Reach</p>
-            <ul className="space-y-2 text-sm text-bone/80">
+            <ul className="space-y-1 text-sm text-bone/80">
               <li>
-                <a href={`mailto:${site.email}`} className="link-underline hover:text-bone">
+                <a
+                  href={`mailto:${site.email}`}
+                  className="inline-flex items-center min-h-[40px] link-underline hover:text-bone tap touch-manipulation"
+                >
                   {site.email}
                 </a>
               </li>
               <li>
-                <a href={site.social.instagram} target="_blank" rel="noreferrer" className="link-underline hover:text-bone">
+                <a
+                  href={site.social.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center min-h-[40px] link-underline hover:text-bone tap touch-manipulation"
+                >
                   Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.social.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center min-h-[40px] link-underline hover:text-bone tap touch-manipulation"
+                >
+                  LinkedIn
                 </a>
               </li>
             </ul>
@@ -35,11 +53,11 @@ export function Footer() {
 
           <div>
             <p className="label-eyebrow mb-4">Site</p>
-            <ul className="space-y-2 text-sm text-bone/80">
-              <li><Link href="/services" className="link-underline hover:text-bone">Services</Link></li>
-              <li><Link href="/about" className="link-underline hover:text-bone">About</Link></li>
-              <li><Link href="/team" className="link-underline hover:text-bone">Team</Link></li>
-              <li><Link href="/book" className="link-underline hover:text-bone">Book</Link></li>
+            <ul className="space-y-1 text-sm text-bone/80">
+              <li><Link href="/services" className="inline-flex items-center min-h-[40px] link-underline hover:text-bone tap touch-manipulation">Services</Link></li>
+              <li><Link href="/about" className="inline-flex items-center min-h-[40px] link-underline hover:text-bone tap touch-manipulation">About</Link></li>
+              <li><Link href="/team" className="inline-flex items-center min-h-[40px] link-underline hover:text-bone tap touch-manipulation">Team</Link></li>
+              <li><Link href="/book" className="inline-flex items-center min-h-[40px] link-underline hover:text-bone tap touch-manipulation">Book</Link></li>
             </ul>
           </div>
         </div>

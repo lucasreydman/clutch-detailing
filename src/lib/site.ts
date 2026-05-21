@@ -12,6 +12,7 @@ export const site = {
   founded: "2024",
   social: {
     instagram: "https://instagram.com/clutch.detailinglp/",
+    linkedin: "https://www.linkedin.com/company/clutch-detailing/",
   },
   calendlyUrl:
     process.env.NEXT_PUBLIC_CALENDLY_URL ||

@@ -31,7 +31,7 @@ export function ServicesGrid() {
               </p>
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 mt-6 text-forest font-medium link-underline"
+                className="inline-flex items-center gap-2 mt-6 min-h-[44px] text-forest font-medium link-underline tap touch-manipulation"
               >
                 View full pricing
                 <span aria-hidden>→</span>
