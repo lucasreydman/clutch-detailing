@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      className="relative min-h-screen bg-eco-mesh bg-grain overflow-hidden pt-28 md:pt-40 pb-24"
+      className="relative min-h-dvh bg-eco-mesh bg-grain overflow-hidden pt-28 md:pt-40 pb-24"
     >
       {/* Decorative leaf-arc shape, parallax */}
       <motion.div
@@ -82,7 +82,7 @@ export function Hero() {
           <BookNowButton size="lg" />
           <Link
             href="/services"
-            className="inline-flex items-center h-14 px-7 rounded-full border border-forest/20 text-forest hover:border-forest hover:bg-forest hover:text-bone transition-all duration-300 text-base font-medium"
+            className="inline-flex items-center h-14 px-7 rounded-full border border-forest/20 text-forest hover:border-forest hover:bg-forest hover:text-bone transition-all duration-300 text-base font-medium tap touch-manipulation select-none"
           >
             See pricing
           </Link>

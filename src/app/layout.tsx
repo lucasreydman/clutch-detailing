@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { LocalBusinessJsonLd } from "@/components/JsonLd";
+import { MobileBookFab } from "@/components/MobileBookFab";
 import { site } from "@/lib/site";
 
 const fraunces = Fraunces({
@@ -18,6 +19,17 @@ const manrope = Manrope({
   variable: "--font-manrope",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f1ea" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a2e1f" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -56,6 +68,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  appleWebApp: {
+    capable: true,
+    title: site.name,
+    statusBarStyle: "black-translucent",
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 export default function RootLayout({
@@ -68,8 +88,9 @@ export default function RootLayout({
       <body>
         <LocalBusinessJsonLd />
         <Nav />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-dvh">{children}</main>
         <Footer />
+        <MobileBookFab />
       </body>
     </html>
   );

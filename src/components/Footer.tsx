@@ -4,7 +4,7 @@ import { BookNowButton } from "./BookNowButton";
 
 export function Footer() {
   return (
-    <footer className="relative bg-forest text-bone overflow-hidden">
+    <footer className="relative bg-forest text-bone overflow-hidden safe-bottom">
       <div className="absolute inset-0 bg-grain pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-5 md:px-8 py-20 md:py-28">

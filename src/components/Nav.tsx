@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { BookNowButton } from "./BookNowButton";
 
@@ -14,14 +14,26 @@ const links = [
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
+  const lastY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      // Hide on scroll-down past 120px, show on scroll-up. Never hide while menu open.
+      const delta = y - lastY.current;
+      if (!open) {
+        if (y > 120 && delta > 4) setHidden(true);
+        else if (delta < -4) setHidden(false);
+      }
+      lastY.current = y;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [open]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -34,11 +46,11 @@ export function Nav() {
     <>
       <motion.header
         initial={{ y: -40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-[color-mix(in_oklab,var(--color-bone)_88%,transparent)] backdrop-blur-md border-b hairline"
+        animate={{ y: hidden ? -100 : 0, opacity: 1 }}
+        transition={{ duration: hidden ? 0.35 : 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 left-0 right-0 z-50 safe-top transition-colors duration-500 ${
+          scrolled || open
+            ? "bg-[color-mix(in_oklab,var(--color-bone)_82%,transparent)] backdrop-blur-md border-b hairline"
             : "bg-transparent"
         }`}
       >
@@ -68,12 +80,12 @@ export function Nav() {
           </div>
 
           {/* Mobile: book button + hamburger */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="md:hidden flex items-center gap-1">
             <BookNowButton size="sm" label="Book" />
             <button
               onClick={() => setOpen(true)}
               aria-label="Open menu"
-              className="w-10 h-10 grid place-items-center rounded-full hover:bg-forest/5 transition"
+              className="w-11 h-11 grid place-items-center rounded-full hover:bg-forest/5 active:bg-forest/10 transition tap"
             >
               <span className="block w-5 h-px bg-forest relative before:absolute before:content-[''] before:left-0 before:right-0 before:-top-1.5 before:h-px before:bg-forest after:absolute after:content-[''] after:left-0 after:right-0 after:top-1.5 after:h-px after:bg-forest" />
             </button>
@@ -88,7 +100,7 @@ export function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] md:hidden bg-bone bg-grain"
+            className="fixed inset-0 z-[60] md:hidden bg-bone bg-grain safe-top safe-bottom scroll-touch overflow-y-auto"
           >
             <div className="flex items-center justify-between px-5 h-16">
               <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-2.5">
@@ -100,7 +112,7 @@ export function Nav() {
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
-                className="w-10 h-10 grid place-items-center rounded-full hover:bg-forest/5"
+                className="w-11 h-11 grid place-items-center rounded-full hover:bg-forest/5 active:bg-forest/10 tap"
               >
                 <span className="block w-5 h-px bg-forest rotate-45 absolute" />
                 <span className="block w-5 h-px bg-forest -rotate-45 absolute" />

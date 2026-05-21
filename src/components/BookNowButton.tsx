@@ -39,10 +39,12 @@ export function BookNowButton({
   const calendlyUrl = url || site.calendlyUrl;
 
   const base =
-    "group relative inline-flex items-center justify-center gap-2 font-medium tracking-tight rounded-full transition-all duration-300 will-change-transform";
+    "group relative inline-flex items-center justify-center gap-2 font-medium tracking-tight rounded-full transition-all duration-300 will-change-transform " +
+    "touch-manipulation select-none active:scale-[0.97] active:transition-[transform] active:duration-75";
   const sizes: Record<NonNullable<Props["size"]>, string> = {
-    sm: "h-9 px-4 text-sm",
-    md: "h-11 px-5 text-[15px]",
+    // All sizes meet Apple HIG 44pt minimum touch target on mobile
+    sm: "h-11 px-4 text-sm",
+    md: "h-12 px-5 text-[15px]",
     lg: "h-14 px-7 text-base",
   };
   const variants: Record<NonNullable<Props["variant"]>, string> = {

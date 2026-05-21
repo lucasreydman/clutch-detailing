@@ -37,6 +37,8 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    /* Prevent overscroll bounce on iOS that exposes the white below the page */
+    overscroll-behavior-y: none;
   }
 
   body {
@@ -45,11 +47,28 @@
     font-family: var(--font-body);
     font-feature-settings: "ss01", "cv01", "cv02";
     overflow-x: hidden;
+    overscroll-behavior-y: none;
+    /* Kill the blue tap flash on iOS / Android; we use intentional active states */
+    -webkit-tap-highlight-color: transparent;
   }
 
   ::selection {
     background: var(--color-forest);
     color: var(--color-bone);
+  }
+
+  /* Form inputs — 16px minimum prevents iOS zoom-on-focus.
+     (No forms in app today; future-proofing.) */
+  input, textarea, select {
+    font-size: max(16px, 1rem);
+  }
+
+  /* UI chrome: never select buttons / nav / icons, ever */
+  button, [role="button"], nav a, nav button, .ui-chrome {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    touch-action: manipulation;
   }
 
   /* Display headings get the editorial serif with slight optical adjustments */
@@ -157,6 +176,33 @@
     background-position: 100% 100%;
   }
 
+  /* iOS safe-area paddings (notch / home indicator). Use on the
+     navbar (top) and any bottom-anchored chrome (fab, footer rim). */
+  .safe-top    { padding-top: env(safe-area-inset-top); }
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+  .safe-x      { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+
+  /* Combine with existing offset: header position uses top + safe inset */
+  .top-safe { top: env(safe-area-inset-top); }
+
+  /* Dynamic viewport height — adapts when iOS shows/hides the URL bar
+     and avoids the keyboard pushing content awkwardly. */
+  .min-h-dvh { min-height: 100dvh; }
+
+  /* Press feedback — apply to anything tappable for a native-feel response */
+  .tap {
+    transition: transform 120ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tap:active {
+    transform: scale(0.97);
+  }
+
+  /* Smooth momentum scrolling on iOS for any internal scrollers */
+  .scroll-touch {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
   /* Soft mesh background used on hero */
   .bg-eco-mesh {
     background:
@@ -165,6 +211,18 @@
       radial-gradient(80% 80% at 80% 100%, color-mix(in oklab, var(--color-bone-deep) 60%, transparent), transparent 70%),
       var(--color-bone);
   }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee { animation: none !important; }
 }
 
 /* ---------- CALENDLY EMBED OVERRIDES ----------

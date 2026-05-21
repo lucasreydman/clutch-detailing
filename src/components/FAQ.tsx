@@ -27,7 +27,7 @@ export function FAQ() {
                 <li key={f.q} className="border-b hairline">
                   <button
                     onClick={() => setOpen(open === i ? null : i)}
-                    className="w-full text-left py-6 md:py-7 flex items-start justify-between gap-6 group"
+                    className="w-full text-left py-6 md:py-7 flex items-start justify-between gap-6 group touch-manipulation select-none"
                     aria-expanded={open === i}
                   >
                     <span className="font-display text-xl md:text-2xl text-forest tracking-tight">
