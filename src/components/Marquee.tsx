@@ -2,7 +2,7 @@ export function Marquee() {
   const items = [
     "Waterless wash",
     "Lawrence Park",
-    "Ceramic coating",
+    "Full service detail",
     "Hoggs Hollow",
     "Plus+ interior",
     "Surrounding neighbourhoods",

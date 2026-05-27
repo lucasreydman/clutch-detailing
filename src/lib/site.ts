@@ -9,7 +9,7 @@ export const site = {
   city: "Toronto",
   region: "ON",
   country: "CA",
-  founded: "2024",
+  founded: "2023",
   social: {
     instagram: "https://instagram.com/clutch.detailinglp/",
     linkedin: "https://www.linkedin.com/company/clutch-detailing/",

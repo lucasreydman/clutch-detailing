@@ -41,7 +41,6 @@ export const metadata: Metadata = {
   keywords: [
     "mobile car detailing Toronto",
     "waterless car wash Toronto",
-    "ceramic coating Toronto",
     "Lawrence Park car detailing",
     "Hoggs Hollow car wash",
     "north Toronto car detailing",

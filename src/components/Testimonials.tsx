@@ -5,7 +5,7 @@ import { Reveal } from "./Reveal";
 
 export function Testimonials() {
   return (
-    <section className="relative py-24 md:py-36 bg-bone-warm/40 bg-grain overflow-hidden">
+    <section id="reviews" className="relative py-24 md:py-36 bg-bone-warm/40 bg-grain overflow-hidden scroll-mt-24">
       <div
         aria-hidden
         className="absolute -top-32 left-1/4 w-[40vw] aspect-square rounded-full bg-sand/40 blur-3xl"

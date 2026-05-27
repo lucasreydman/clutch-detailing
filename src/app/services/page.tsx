@@ -6,7 +6,7 @@ import { FAQ } from "@/components/FAQ";
 export const metadata: Metadata = {
   title: "Services & Pricing — Mobile Car Detailing Toronto",
   description:
-    "Transparent pricing for waterless mobile car detailing in Toronto. Standard washes from $30, interiors from $135, ceramic coating $599.",
+    "Transparent pricing for waterless mobile car detailing in Toronto. Standard washes from $30, interiors from $135, full-service details from $165.",
 };
 
 export default function ServicesPage() {

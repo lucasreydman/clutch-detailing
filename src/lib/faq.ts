@@ -15,7 +15,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "How long does a full detail take?",
-    a: "A standard wash is about 45 minutes. A Plus+ interior runs around 2.5 to 3 hours. Ceramic coating is a half day.",
+    a: "A standard wash is about 45 minutes. A Plus+ interior runs around 2.5 to 3 hours. A full All-In detail is about 3 hours.",
   },
   {
     q: "What if it rains?",

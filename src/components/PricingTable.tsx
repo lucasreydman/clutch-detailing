@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 import { Reveal } from "./Reveal";
 import { BookNowButton } from "./BookNowButton";
 
-const groups = ["Exterior", "Interior", "Complete", "Coating"] as const;
+const groups = ["Exterior", "Interior", "Complete"] as const;
 
 export function PricingTable() {
   return (

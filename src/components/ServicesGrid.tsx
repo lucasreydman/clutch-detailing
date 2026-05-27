@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 import { BookNowButton } from "./BookNowButton";
 import { Reveal } from "./Reveal";
 
-const featured = ["standard-wash", "full-service", "all-in", "ceramic"];
+const featured = ["standard-wash", "interior-plus", "full-service", "all-in"];
 
 export function ServicesGrid() {
   const items = services.filter((s) => featured.includes(s.id));
@@ -27,7 +27,7 @@ export function ServicesGrid() {
           <div className="md:col-span-5">
             <Reveal delay={0.1}>
               <p className="text-lg text-forest/75 max-w-md leading-relaxed text-pretty">
-                From a quick exterior wash to a full ceramic coating. The same level of care on every job.
+                From a quick exterior wash to a complete interior and exterior detail. The same level of care on every job.
               </p>
               <Link
                 href="/services"

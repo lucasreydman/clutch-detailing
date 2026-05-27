@@ -95,10 +95,16 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 1.1 }}
           className="mt-16 md:mt-24 flex flex-wrap items-center gap-x-8 gap-y-4"
         >
-          <Stars />
-          <p className="text-sm text-forest/70 max-w-md">
-            Trusted by clients across north Toronto since 2024.
-          </p>
+          <Link
+            href="#reviews"
+            className="flex items-center gap-x-8 gap-y-2 flex-wrap group tap touch-manipulation"
+            aria-label="Read client reviews"
+          >
+            <Stars />
+            <p className="text-sm text-forest/70 max-w-md link-underline group-hover:text-forest transition-colors">
+              Trusted by clients across north Toronto since 2023.
+            </p>
+          </Link>
         </motion.div>
 
         {/* Scroll hint */}

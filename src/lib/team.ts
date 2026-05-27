@@ -6,6 +6,7 @@ export type TeamMember = {
   initials: string;
   phone: string;
   phoneDisplay: string;
+  photo?: string;
 };
 
 export const team: TeamMember[] = [
@@ -17,6 +18,7 @@ export const team: TeamMember[] = [
     initials: "AR",
     phone: "+16472746958",
     phoneDisplay: "(647) 274-6958",
+    photo: "/team/alex.jpg",
   },
   {
     name: "Matthew Petko",
@@ -26,5 +28,6 @@ export const team: TeamMember[] = [
     initials: "MP",
     phone: "+16475171020",
     phoneDisplay: "(647) 517-1020",
+    photo: "/team/matt.jpg",
   },
 ];

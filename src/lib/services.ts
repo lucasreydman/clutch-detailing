@@ -1,7 +1,7 @@
 export type ServiceTier = {
   id: string;
   name: string;
-  category: "Exterior" | "Interior" | "Complete" | "Coating";
+  category: "Exterior" | "Interior" | "Complete";
   priceCar: number;
   priceSuv?: number;
   duration?: string;
@@ -122,22 +122,6 @@ export const services: ServiceTier[] = [
     calendlyCar: "all-in-suv-minivan-clone",
     calendlySuv: "all-in-suv-minivan",
     highlight: true,
-  },
-  {
-    id: "ceramic",
-    name: "Ceramic Coating — CRMX",
-    category: "Coating",
-    priceCar: 599,
-    duration: "Half day",
-    summary:
-      "Wash, iron decontamination, clay bar paint preparation, and a CRMX ceramic application with cure.",
-    includes: [
-      "Standard wash + iron decontamination",
-      "Clay bar paint prep",
-      "CRMX ceramic application",
-      "Cure + final wipe-down",
-    ],
-    calendlyCar: "ceramic-coating-550",
   },
 ];
 
