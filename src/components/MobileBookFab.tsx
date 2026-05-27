@@ -22,12 +22,22 @@ export function MobileBookFab() {
 
   useEffect(() => {
     const onScroll = () => {
-      // Show after the hero is roughly out of view (~80% of viewport)
-      setVisible(window.scrollY > window.innerHeight * 0.8);
+      const y = window.scrollY;
+      const vh = window.innerHeight;
+      const max = document.documentElement.scrollHeight - vh;
+      // Show after the hero is roughly out of view (~80% of viewport).
+      // Hide near the bottom so we don't sit on top of the footer's own CTA.
+      const pastHero = y > vh * 0.8;
+      const nearBottom = y >= max - 240;
+      setVisible(pastHero && !nearBottom);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (

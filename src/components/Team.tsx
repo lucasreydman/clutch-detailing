@@ -132,7 +132,7 @@ function ContactMenu({
         <div
           role="menu"
           aria-label={`Contact options for ${name}`}
-          className="absolute left-0 top-full mt-2 z-10 min-w-[12rem] rounded-2xl border hairline bg-bone shadow-lg overflow-hidden"
+          className="absolute left-0 bottom-full mb-2 z-20 min-w-[12rem] rounded-2xl border hairline bg-bone shadow-lg overflow-hidden"
         >
           <a
             role="menuitem"
